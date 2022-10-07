@@ -601,9 +601,13 @@ export const recipes = {
 	bananapop: {
 		name: 'Banana Pop',
 		test: (cooker, names, tags) => {
-			return names.cavebanana && tags.frozen && tags.inedible && !tags.meat && !tags.fish;
+			return names.cave_banana && tags.frozen && tags.inedible && !tags.meat && !tags.fish;
+			//DST recipe, idk if the inedible part is necessary, but this is how it's presented in preparedfoods.lua, commented out due to issue #32
+			//return (names.cave_banana || names.cave_banana_cooked) && tags.frozen && names.twigs && !tags.meat && !tags.fish && (tags.inedible && tags.inedible <= 2);
 		},
-		requirements: [SPECIFIC('cavebanana'), TAG('frozen'), TAG('inedible'), NOT(TAG('meat')), NOT(TAG('fish'))],
+		requirements: [SPECIFIC('cave_banana'), TAG('frozen'), TAG('inedible'), NOT(TAG('meat')), NOT(TAG('fish'))],
+		//DST:
+		//requirements: [NAME('cave_banana'), TAG('frozen'), SPECIFIC('twigs'), NOT(TAG('meat')), NOT(TAG('fish')), TAG('inedible', COMPARE('<=', 2))],
 		priority: 20,
 		foodtype: 'veggie',
 		health: healing_med,
