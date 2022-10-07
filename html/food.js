@@ -439,6 +439,8 @@ export const food = {
 		stack: stack_size_smallitem,
 		drytime: dry_med,
 		dry: 'morsel_dried',
+		//mode: 'together',
+		//meat: 0.5,
 		uncookable: true
 	},
 	batwing_cooked: {
@@ -448,6 +450,8 @@ export const food = {
 		hunger: calories_medsmall,
 		sanity: 0,
 		perish: perish_med,
+		//mode: 'together',
+		//meat: 0.5,
 		uncookable: true
 	},
 	minotaurhorn: {
